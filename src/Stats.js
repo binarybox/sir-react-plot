@@ -8,7 +8,7 @@ export default class Stats extends Component{
     super(props)
     this.state = {
       time: 1.0,
-      people: 72900000000,
+      people: 72.900,
     }
   }
 
@@ -16,7 +16,7 @@ export default class Stats extends Component{
     return (
       <div>
       <h2>Stats</h2>
-      <input type="number" value={this.state.people} onChange={(e) => this.setState({people: e.target.value})}/>
+      People in million <input type="number" value={this.state.people} onChange={(e) => this.setState({people: e.target.value})}/>
         <div><Sliders value={this.state.time} name="time" onChange={(e) => this.setState({time: e})} /></div>
       <table>
         <thead>
@@ -38,16 +38,16 @@ export default class Stats extends Component{
         <tbody>
           <tr>
             <td>
-            {Math.round(this.props.s[Math.round(this.state.time * this.props.length)] * this.state.people)}
+            {(this.props.s[Math.round(this.state.time * this.props.length)] * this.state.people).toFixed(2)}
             </td>
             <td>
-            {Math.round(this.props.i[Math.round(this.state.time * this.props.length)] * this.state.people)}
+            {(this.props.i[Math.round(this.state.time * this.props.length)] * this.state.people).toFixed(2)}
             </td>
             <td>
-            {Math.round(this.props.r[Math.round(this.state.time * this.props.length)] * this.state.people)}
+            {(this.props.r[Math.round(this.state.time * this.props.length)] * this.state.people).toFixed(2)}
             </td>
             <td>
-            {Math.round(this.props.d[Math.round(this.state.time * this.props.length)] * this.state.people)}
+            {(this.props.d[Math.round(this.state.time * this.props.length)] * this.state.people).toFixed(2)}
             </td>
           </tr>
         </tbody>
