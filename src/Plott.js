@@ -48,44 +48,12 @@ export default class Plott extends Component{
     d_line.x = x;
   }
 
-  s_dot(s, i , r){
-    return -(this.props.beta * s * i);
-  }
-
-  i_dot(s, i, r){
-    return this.props.beta * s * i - this.props.theta * i - this.props.mortal * i;
-  }
-
-  r_dot(s, i, r){
-    return this.props.theta * i;
-  }
-
-  d_dot(s, i, r){
-    return this.props.mortal * i;
-  }
-
-  setupData(){
-    const s = [1.0];
-    const i = [0.001];
-    const r = [0.0];
-    const d = [0.0];
-
-    for(var j = 0; j < this.props.length-1; j++){
-      s.push(s[j] + this.s_dot(s[j], i[j], r[j]));
-      i.push(i[j] + this.i_dot(s[j], i[j], r[j]));
-      r.push(r[j] + this.r_dot(s[j], i[j], r[j]));
-      d.push(d[j] + this.d_dot(s[j], i[j], r[j]));
-    }
-    s_line.y = s;
-    i_line.y = i;
-    r_line.y = r;
-    d_line.y = d;
-  }
-
   render(){
-    this.setupData();
-
-    const title = 'SIRD with r0: ' + this.props.beta / this.props.theta;
+    s_line.y = this.props.s;
+    i_line.y = this.props.i;
+    r_line.y = this.props.r;
+    d_line.y = this.props.d;
+    const title = 'SIRD'
     return(
       <div id="line-plot">
       <Plot
