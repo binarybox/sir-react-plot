@@ -1,0 +1,15 @@
+@import 'global_variables';
+
+header{
+  background-color: $background;
+
+  border-bottom: 2px solid $mainColor;
+}
+
+#menu{
+  display:inline;
+}
+
+#logo{
+  display: inline;
+}
