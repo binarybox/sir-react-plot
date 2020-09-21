@@ -1,18 +1,5 @@
 @import "global_variables";
 
-ul{
-  padding: 0;
-  width: 400px;
-  list-style: none;
-  text-align: left;
-  li{
-    width: 100%;
-    input{
-      padding: 0 5%;
-      width: 90%;
-    }
-    label{
-      display: block;
-    }
-  }
+label{
+  display: block;
 }

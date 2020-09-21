@@ -46,9 +46,7 @@ export default class Plott extends Component{
     i_line.x = x;
     r_line.x = x;
     d_line.x = x;
-
   }
-
 
   s_dot(s, i , r){
     return -(this.props.beta * s * i);

@@ -1,5 +1,15 @@
 @import 'global_variables';
 
+#sliders{
+  width: 100%;
+}
+table{
+  width: 100%;
+  th{
+    width: 33.333vw;
+  }
+}
+
 .App {
   text-align: center;
 }

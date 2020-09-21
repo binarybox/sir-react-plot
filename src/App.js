@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import Header from './Header.js';
 import Plott from "./Plott.js";
 import Sliders from './Sliders.js';
+import Stats from './Stats.js'
 import './App.scss';
 
 export default class App extends React.Component {
@@ -20,25 +21,35 @@ export default class App extends React.Component {
     this.setState({beta: e})
   }
 
-
-
   render(){
+    const length = 400;
     return (
-      <div className="App">
-      <Header name="Test" menu={[{name: "first", link: "https//wasauchimmer.com"}, {name: "second", link:"https//wasauchsonst"}]}/>
-      <Plott length={400} beta={this.state.beta} theta={this.state.theta} mortal={this.state.mortal}/>
-      <ul>
-      <li>
-      <Sliders value={this.state.beta} name="beta" onChange={(e) => this.setState({beta: e})}/>
-      </li>
-      <li>
-      <Sliders value={this.state.theta} name="theta" onChange={(e) => this.setState({theta: e})}/>
-      </li>
-      <li>
-      <Sliders value={this.state.mortal} name="mortal"onChange={(e) => this.setState({mortal: e})}/>
-      </li>
-      </ul>
-      </div>
+      <table className="modell">
+        <tbody>
+          <tr>
+            <th>
+            {/*<Header name="Test" menu={[{name: "first", link: "https//wasauchimmer.com"}, {name: "second", link:"https//wasauchsonst"}]}/>*/ }
+            <Plott length={length} beta={this.state.beta} theta={this.state.theta} mortal={this.state.mortal}/>
+            </th>
+            <th>
+            <Stats beta={this.state.beta} theta={this.state.theta} mortal={this.state.mortal} length={length}/>
+            </th>
+            <th>
+              <ul id="sliders">
+                <li>
+                  <Sliders value={this.state.beta} name="beta" onChange={(e) => this.setState({beta: e})}/>
+                </li>
+                <li>
+                  <Sliders value={this.state.theta} name="theta" onChange={(e) => this.setState({theta: e})}/>
+                </li>
+                <li>
+                  <Sliders value={this.state.mortal} name="mortal"onChange={(e) => this.setState({mortal: e})}/>
+                </li>
+              </ul>
+            </th>
+          </tr>
+        </tbody>
+      </table>
     );
 
   }
