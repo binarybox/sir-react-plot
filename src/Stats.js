@@ -16,7 +16,7 @@ export default class Stats extends Component{
     return (
       <div>
       <h2>Stats</h2>
-      People in million <input type="number" value={this.state.people} onChange={(e) => this.setState({people: e.target.value})}/>
+      <input type="number" value={this.state.people} onChange={(e) => this.setState({people: e.target.value})}/> million people
         <div><Sliders value={this.state.time} name="time" onChange={(e) => this.setState({time: e})} /></div>
       <table>
         <thead>

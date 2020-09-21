@@ -2,6 +2,31 @@
 tr{
   width: 100%;
 }
+thead{
+  background-color: grey;
+}
 td{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 0;
+  margin: 0;
   width: 25%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  border:none;
+  border-bottom: 1px solid black;
+  text-align: right;
+}
+
+/* Firefox */
+input[type=number] {
+  border:none;
+  border-bottom: 1px solid black;
+  -moz-appearance: textfield;
+  text-align: right;
 }
